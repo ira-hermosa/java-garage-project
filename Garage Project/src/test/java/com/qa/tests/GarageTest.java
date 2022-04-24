@@ -33,16 +33,16 @@ public class GarageTest {
 		testGarage.addVehicle(car1);
 		testGarage.addVehicle(truck1);
 		testGarage.addVehicle(motorbike1);
-		testGarage.addVehicle(car2);
-		testGarage.addVehicle(truck2);
-		testGarage.addVehicle(motorbike2);
+//		testGarage.addVehicle(car2);
+//		testGarage.addVehicle(truck2);
+//		testGarage.addVehicle(motorbike2);
 	}
 	
 	@Test
 	public void addTest() {
 		
 		String result;
-		result = testGarage.addVehicle(car2);
+		result = testGarage.addVehicle(car1);
 		System.out.println(result);
 		Assertions.assertEquals("Car added to list", result);
 		
@@ -52,23 +52,23 @@ public class GarageTest {
 	public void readAllTest() {
 		String result;
 		result = testGarage.readAll().toString();
-		Assertions.assertEquals("[Motorbike [exhaustSize=25, perimeter=30.5, getNumOfWheels()=2, getEngineSize()=15, isImportedSparePart()=false], Truck [numOfKilometers=500, weightCapacity=100, getNumOfWheels()=6, getEngineSize()=45, isImportedSparePart()=true], Car [numOfDoors=4, age=5, getNumOfWheels()=2, getEngineSize()=30, isImportedSparePart()=false]]", result);
-		
+		Assertions.assertEquals("[Car [numOfDoors=4, age=5, getNumOfWheels()=2, getEngineSize()=30, isImportedSparePart()=false], Truck [numOfKilometers=500, weightCapacity=100, getNumOfWheels()=6, getEngineSize()=45, isImportedSparePart()=true], Motorbike [exhaustSize=25, perimeter=30.5, getNumOfWheels()=2, getEngineSize()=15, isImportedSparePart()=false]]", result);
 	}
 	
 	@Test
 	public void vehicleCostTest() {
 		double result;
-		result = testGarage.vehicleCost(0);
-		Assertions.assertEquals(null, result);
+		result = testGarage.vehicleCost(car1);
+		Assertions.assertEquals(1200, result);
 	}
 	
 	@Test
 	public void removeByIndexTest() {
 		int index = 1;
 		String result;
-		result = testGarage.removeByIndex(index);
-		Assertions.assertEquals(null, result);
+		result = testGarage.removeByIndex(index);		
+		Assertions.assertEquals("Vehicle of index: 1 has been removed from the list", result);
+		
 	}
 	
 	@Test

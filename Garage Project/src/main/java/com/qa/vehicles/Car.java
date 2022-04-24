@@ -14,6 +14,7 @@ public class Car extends Vehicle {
 		this.age = age;
 	}
 
+	
 //	getters and setters
 	
 	public int getNumOfDoors() {

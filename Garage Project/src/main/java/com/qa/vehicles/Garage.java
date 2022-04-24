@@ -16,8 +16,8 @@ public ArrayList<Vehicle> myGarage = new ArrayList<>();
 		return myGarage;	
 	}
 	
-	public double vehicleCost(int index) {
-		return myGarage.fixCost();
+	public double vehicleCost(Vehicle vehicle) {
+		return vehicle.fixCost();
 	}
 
 	
